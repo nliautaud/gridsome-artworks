@@ -44,7 +44,6 @@
             <DataBlock :artwork="$page.artwork" />
 
             <SaleBlock :artwork="$page.artwork"/>
-            
 
           </div>
         </div>

@@ -64,7 +64,16 @@ query Query {
   categories: allCategory (perPage: 100000) {
     edges {
       node {
+        path
         title
+        images {
+          thumb {
+            url
+            width
+            height
+            b64
+          }
+        }
         artworks {
           id
           date

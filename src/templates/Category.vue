@@ -1,6 +1,12 @@
 <template>
   <DefaultLayout>
 
+    <div class="section">
+      <div class="container">
+        <h1 class="title">{{$page.category.title}}</h1>
+      </div>
+    </div>
+
     <CategoriesList :category="$page.category"/>
     
     <ArtworksList :artworks="$page.category.artworks" />
