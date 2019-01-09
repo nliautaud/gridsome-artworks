@@ -12,7 +12,7 @@
       <div class="container">
 
         <table class="table is-fullwidth is-striped is-size-7"
-          v-if="view == 'row'"
+          v-if="layout == 'row'"
           v-infinite-scroll="loadMore"
           infinite-scroll-disabled="busy"
           :infinite-scroll-distance="2000"
@@ -51,7 +51,7 @@
             :style="{'transition-duration': `${200+(i%entriesPerPage)*100}ms`}"
             >
             <ArtworkCard
-              :mode="view"
+              :mode="layout"
               :artwork="artwork"
             />
           </div>
@@ -95,7 +95,6 @@ export default {
       loadedPages: 1,
       filters: {},
       sort: 'newest',
-      view: 'default',
       isMounted: false
     }
   },
@@ -172,14 +171,13 @@ export default {
       return this.loadedPages * this.entriesPerPage
     },
     columnClass() {
-      return this.view == 'row' ? 'is-full' : 'is-12-mobile is-4-tablet is-4-desktop is-3-widescreen is-3-fullhd'
+      return this.layout == 'row' ? 'is-full' : 'is-12-mobile is-4-tablet is-4-desktop is-3-widescreen is-3-fullhd'
+    },
+    layout() {
+      return this.$store.state.layout
     }
   },
   methods: {
-    onView(value) {
-      this.view = value
-      this.loadedPages = 1
-    },
     onFilter(value) {
       this.filters = value
       this.loadedPages = 1

@@ -1,3 +1,5 @@
+import { store } from './store'
+
 import DefaultLayout from '~/layouts/Default.vue'
 
 import Buefy from 'buefy'
@@ -9,7 +11,7 @@ import "@fortawesome/fontawesome-free/css/fontawesome.css";
 import VueLazyload from 'vue-lazyload'
 import Lazymage from '~/components/Lazymage'
 
-export default function (Vue) {
+export default function (Vue, {appOptions}) {
   Vue.component('DefaultLayout', DefaultLayout)
   Vue.component('Lazymage', Lazymage)
 
@@ -18,4 +20,6 @@ export default function (Vue) {
   })
 
   Vue.use(VueLazyload)
+
+  appOptions.store = store
 }

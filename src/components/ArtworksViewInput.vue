@@ -3,7 +3,7 @@
     <b-field>
       <b-radio-button v-model="view"
           native-value="default"
-          type="is-grey">
+          type="is-dark">
           <span class="icon">
             <i class="fas fa-th-large"></i>
           </span>
@@ -11,7 +11,7 @@
 
       <b-radio-button v-model="view"
           native-value="image"
-          type="is-grey">
+          type="is-dark">
           <span class="icon">
             <i class="fas fa-th"></i>
           </span>
@@ -19,7 +19,7 @@
 
       <b-radio-button v-model="view"
           native-value="row"
-          type="is-grey">
+          type="is-dark">
           <span class="icon">
             <i class="fas fa-th-list"></i>
           </span>
@@ -36,14 +36,14 @@ export default {
   components: {
     Treeselect
   },
-  data() {
-    return {
-      view: 'default'
-    }
-  },
-  watch: {
-    view(val) {
-      this.$emit('update:view', val)
+  computed: {
+    view: {
+      get () {
+        return this.$store.state.layout
+      },
+      set (value) {
+        this.$store.commit('layout', value)
+      }
     }
   }
 }
