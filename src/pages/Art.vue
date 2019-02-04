@@ -1,9 +1,6 @@
 <template>
   <DefaultLayout>
 
-    <a @click="$page.categories.edges.push($page.categories.edges[0])">Add</a>
-    <a @click="$page.categories.edges.pop()">Rem</a>
-
     <CategoriesList :categories="rootCategories">
       <template slot="title">This is it</template>
       <template slot="content">
@@ -36,13 +33,6 @@ query Query {
           id
           title
         }
-        tags {
-          title
-          path
-          artworks {
-            id
-          }
-        }
         images {
           thumb {
             url
@@ -66,14 +56,6 @@ query Query {
       node {
         path
         title
-        images {
-          thumb {
-            url
-            width
-            height
-            b64
-          }
-        }
         artworks {
           id
           date
@@ -88,13 +70,6 @@ query Query {
           supports {
             id
             title
-          }
-          tags {
-            title
-            path
-            artworks {
-              id
-            }
           }
           images {
             thumb {

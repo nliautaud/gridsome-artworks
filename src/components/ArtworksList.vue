@@ -37,8 +37,7 @@
           </tbody>
         </table>
 
-        <TransitionGroup v-else
-          appear tag="div" name="cardanim"
+        <div v-else
           class="columns is-multiline"
           v-infinite-scroll="loadMore"
           infinite-scroll-disabled="busy"
@@ -55,7 +54,7 @@
               :artwork="artwork"
             />
           </div>
-        </TransitionGroup>
+        </div>
 
       </div>
     </main>
@@ -218,30 +217,4 @@ export default {
     font-weight 500
     opacity .5
     border-bottom-width 1px
-
-/* base */
-.artworkstransition
-  backface-visibility hidden
-  opacity 0
-/* appearing */
-.artworkstransition-enter-active
-  transition-timing-function ease
-  transition-property all
-/* disappearing */
-.artworkstransition-leave
-  transition-duration 0 !important
-  transition-delay 0 !important
-  transition-timing-function ease-in
-  transition-property none !important
-  z-index 0
-.artworkstransition-move
-  transition-duration .5s
-  transition-timing-function ease
-/* appear at / disappear to */
-.artworkstransition-enter
-.artworkstransition-leave-to
-  transform translateY(100px)
-  opacity 0
-  width 0
-  height 0
 </style>

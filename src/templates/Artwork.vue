@@ -148,20 +148,12 @@ query Query ($path: String!) {
         url
         width
         height
-        b64
       }
       thumb {
         url
         width
         height
         b64
-      }
-    }
-    tags {
-      title
-      path
-      artworks {
-        id
       }
     }
     onsale

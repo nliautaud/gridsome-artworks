@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "gridsome build",
+    "data": "node data/data.js && gridsome develop",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "build": "gridsome build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
@@ -14,12 +15,9 @@
     "axios": "^0.18.0",
     "buefy": "^0.7.1",
     "debounce": "^1.2.0",
-    "faker": "^4.1.0",
     "fuse.js": "^3.3.0",
-    "gridsome": "^0.4.3",
+    "gridsome": "^0.4.7",
     "photoswipe": "^4.1.2",
-    "request-promise-cache": "^2.0.1",
-    "request-promise-native": "^1.0.5",
     "v-lazy-image": "^1.2.2",
     "vue-infinite-scroll": "^2.0.2",
     "vue-lazyload": "^1.2.6",
@@ -29,7 +27,11 @@
   },
   "devDependencies": {
     "bulma": "^0.7.2",
+    "csvtojson": "^2.0.8",
+    "faker": "^4.1.0",
     "node-sass": "^4.11.0",
+    "request-promise-cache": "^2.0.1",
+    "request-promise-native": "^1.0.5",
     "sass-loader": "^7.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"

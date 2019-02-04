@@ -28,9 +28,8 @@
       <tr class="techniques-row" v-if="!without.techniques">
         <th>Technique</th>
         <td colspan="3">
-          <div v-if="artwork.techniques.length" class="tags">
+          <div v-if="artwork.techniques.length">
             <g-link
-              class="tag"
               v-for="technique in artwork.techniques"
               v-bind:key="technique.id"
               :to="technique.path"
@@ -42,9 +41,8 @@
       <tr class="supports-row" v-if="!without.supports">
         <th>Support</th>
         <td colspan="3">
-          <div v-if="artwork.supports.length" class="tags">
+          <div v-if="artwork.supports.length">
             <g-link
-              class="tag"
               v-for="support in artwork.supports"
               v-bind:key="support.id"
               :to="support.path"
@@ -53,7 +51,7 @@
           <div v-else>-</div>
         </td>
       </tr>
-      <tr class="tags-row" v-if="!without.tags">
+      <!-- <tr class="tags-row" v-if="!without.tags">
         <th>Tags</th>
         <td colspan="3">
           <div v-if="artwork.tags.length" class="tags">
@@ -66,7 +64,7 @@
           </div>
           <div v-else>-</div>
         </td>
-      </tr>
+      </tr> -->
       <tr class="collection-row" v-if="!without.collection">
         <th>Collection</th>
         <td colspan="3">

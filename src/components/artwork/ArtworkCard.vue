@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <div class="card-content has-text-centered">
+    <div class="card-content has-text-centered" v-if="mode !== 'image'">
       <div v-if="mode == 'row'">
         <div class="columns">
           <div class="column">
@@ -64,9 +64,6 @@
           :without="{title: true, date: true, author: true, dimensions: true}"
           :singleLine="true"
           class="is-size-7" />
-      </div>
-      <div v-else-if="mode == 'image'">
-        <h3 class="title is-6 has-text-centered"><g-link :to="artwork.path" class="has-text-dark">{{ artwork.title }}</g-link></h3>
       </div>
       <div v-else>
         <h3 class="title is-6"><g-link :to="artwork.path" class="has-text-dark">{{ artwork.title }}</g-link></h3>
