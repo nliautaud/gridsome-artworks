@@ -13,7 +13,7 @@
     "@riophae/vue-treeselect": "0.0.37",
     "array-to-sentence": "^2.0.0",
     "axios": "^0.18.1",
-    "buefy": "^0.7.1",
+    "buefy": "^0.7.2",
     "debounce": "^1.2.0",
     "fuse.js": "^3.3.0",
     "gridsome": "^0.4.7",
